@@ -40,8 +40,8 @@ class Animal(ABC):
                 f' but will get up hungrier - its hungry lever decreased to {self._hungry_level}.')
 
     def feed(self):
-        if self._hungry_level < 10:
-            self._hungry_level += 1
+        if self._hungry_level > 2:
+            self._hungry_level -= 1
         else:
             return f'{self.name} is not hungry!'
         if self._mood < 10:
@@ -50,7 +50,7 @@ class Animal(ABC):
             return f'{self.name} is too excited!'
         sound = self.make_sound()
         return (f'You have fed you {self.name} - it less less hungry '
-                f'(hungry level increased to {self._hungry_level}) and'
+                f'(hungry level decreased to {self._hungry_level}) and'
                 f' more happy - mood increased to {self._mood} points.{sound}!')
 
     def play(self):

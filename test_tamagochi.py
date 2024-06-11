@@ -18,11 +18,11 @@ class TestCat(unittest.TestCase):
         self.cat._hungry_level = 9
         self.cat._mood = 9
         self.assertEqual(self.cat.feed(), "You have fed you Liza - it less less hungry "
-                                          "(hungry level increased to 10) and more happy - mood increased "
+                                          "(hungry level decreased to 8) and more happy - mood increased "
                                           "to 10 points.Meow, Meow!")
 
     def test_feed_not_hungry(self):
-        self.cat._hungry_level = 10
+        self.cat._hungry_level = 1
         self.assertEqual(self.cat.feed(), "Liza is not hungry!")
 
     def test_feed_too_exited(self):
@@ -79,11 +79,11 @@ class TestDog(unittest.TestCase):
         self.dog._hungry_level = 7
         self.dog._mood = 3
         self.assertEqual(self.dog.feed(), "You have fed you Rio - it less less hungry "
-                                          "(hungry level increased to 8) and more happy - mood increased "
+                                          "(hungry level decreased to 6) and more happy - mood increased "
                                           "to 4 points.Woof, woof!")
 
     def test_feed_not_hungry(self):
-        self.dog._hungry_level = 10
+        self.dog._hungry_level = 1
         self.assertEqual(self.dog.feed(), "Rio is not hungry!")
 
     def test_feed_too_exited(self):
